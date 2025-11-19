@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>neohealth — Patient Portal</title>
+    <link rel="stylesheet" href="neo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          neo<span class="hl">health</span>
+        </div>
+        <div class="brand-text">
+          <p class="subtitle">Patient portal</p>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Top navigation">
+        <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#appointments">Appointments</a></li>
+          <li><a href="#prescriptions">Prescriptions</a></li>
+          <li><a href="#history">History</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search" for="search-input">
+          <i class="fa fa-magnifying-glass" aria-hidden="true"></i>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </label>
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+        </button>
+        <button class="profile-btn" aria-label="Profile">
+          <img
+            class="avatar"
+            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s="
+            alt="Profile avatar"
+          />
+        </button>
+      </div>
+    </header>
+
+    <!-- hero removed per user request -->
+
+    <div class="layout healthsync">
+      <aside class="sidebar" aria-label="Main navigation">
+        <ul>
+          <li class="active">
+            <a href="#appointments"
+              ><i class="fa fa-calendar-check"></i><span>Appointments</span></a
+            >
+          </li>
+          <li>
+            <a href="#doctors"
+              ><i class="fa fa-user-md"></i><span>Doctors</span></a
+            >
+          </li>
+          <li>
+            <a href="#reports"
+              ><i class="fa fa-file-medical-alt"></i><span>Reports</span></a
+            >
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a class="signout" href="#signout" role="button" aria-label="Sign out"
+            ><i class="fa fa-right-from-bracket"></i><span>Sign out</span></a
+          >
+        </div>
+      </aside>
+
+      <main class="content" id="dashboard">
+        <section class="panel welcome-panel">
+          <div class="card welcome-card">
+            <div class="welcome-left">
+              <h2>Welcome back, Alex</h2>
+              <p class="muted">Here's a quick snapshot of your health.</p>
+              <div class="welcome-stats">
+                <div class="stat">
+                  <div class="stat-value">2</div>
+                  <div class="stat-label muted">Upcoming</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">75%</div>
+                  <div class="stat-label muted">Adherence</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-value">5</div>
+                  <div class="stat-label muted">Prescriptions</div>
+                </div>
+              </div>
+              <div class="welcome-ctas">
+                <a class="btn primary large" href="#appointments"
+                  >Book Appointment</a
+                >
+                <a class="btn ghost large history-btn" href="#history"
+                  >Medical History</a
+                >
+              </div>
+            </div>
+            <div class="welcome-right">
+              <!-- visual summary: reuse adherence SVG for emphasis -->
+              <div class="adherence-large">
+                <svg
+                  viewBox="0 0 36 36"
+                  class="circular-chart large"
+                  aria-hidden="true"
+                >
+                  <path
+                    class="circle-bg"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <path
+                    class="circle"
+                    stroke-dasharray="75,100"
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                  />
+                  <text x="18" y="20.35" class="percentage">75%</text>
+                </svg>
+                <div class="muted">On track</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel top-row">
+          <div class="card upcoming">
+            <header class="card-head">
+              <h3>Upcoming Appointments</h3>
+              <a class="link-muted" href="#appointments">View all</a>
+            </header>
+            <div class="card-body">
+              <div class="appt-list">
+                <div class="appt-card">
+                  <div class="meta">
+                    <div class="doctor">Dr. Smith</div>
+                    <div class="muted">Oct 20, 2025</div>
+                  </div>
+                  <div class="time">10:30 AM</div>
+                </div>
+                <div class="appt-card">
+                  <div class="meta">
+                    <div class="doctor">Dr. Nguyen</div>
+                    <div class="muted">Nov 8, 2025</div>
+                  </div>
+                  <div class="time">9:00 AM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card prescriptions">
+            <header class="card-head">
+              <h3>Prescriptions</h3>
+              <a class="link-muted" href="#prescriptions">View all</a>
+            </header>
+            <div class="card-body">
+              <ul class="rx-list">
+                <li>
+                  <strong>Atorvastatin</strong>
+                  <div class="muted">10 mg — refill: Dec 1</div>
+                </li>
+                <li>
+                  <strong>Lisinopril</strong>
+                  <div class="muted">5 mg — refill: Nov 10</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card adherence">
+            <header class="card-head"><h3>Medication Adherence</h3></header>
+            <div class="card-body center">
+              <!-- accessible circular progress (SVG) -->
+              <svg
+                viewBox="0 0 36 36"
+                class="circular-chart"
+                aria-hidden="true"
+              >
+                <path
+                  class="circle-bg"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path
+                  class="circle"
+                  stroke-dasharray="75,100"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage">75%</text>
+              </svg>
+              <div class="muted">On track</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel history">
+          <h3>Medical History</h3>
+          <ul class="history-list">
+            <li>
+              <div class="left">
+                <div class="title">Annual Checkup — Dr. Smith</div>
+                <div class="muted">Oct 20, 2025</div>
+              </div>
+              <div class="status badge normal">Normal</div>
+            </li>
+            <li>
+              <div class="left">
+                <div class="title">Blood Test — LabCorp</div>
+                <div class="muted">Sep 15, 2025</div>
+              </div>
+              <div class="status badge pending">Pending</div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <small>© 2025 neohealth — Built with care</small>
+    </footer>
+
+    <!-- JavaScript intentionally removed per user request. Navigation is handled via CSS and progressive enhancement. -->
+  </body>
+</html>
