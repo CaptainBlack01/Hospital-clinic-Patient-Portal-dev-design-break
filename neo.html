@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -13,11 +13,10 @@
     />
   </head>
   <body>
+    <a class="skip-link" href="#dashboard">Skip to main content</a>
     <header class="site-header">
       <div class="brand">
-        <div class="logo" aria-hidden="true">
-          neo<span class="hl">health</span>
-        </div>
+        <div class="logo" aria-hidden="true">neo<span class="hl">health</span></div>
         <div class="brand-text">
           <p class="subtitle">Patient portal</p>
         </div>
@@ -35,21 +34,19 @@
       <div class="header-actions">
         <label class="search" for="search-input">
           <i class="fa fa-magnifying-glass" aria-hidden="true"></i>
-          <input
-            id="search-input"
-            type="search"
-            placeholder="Search..."
-            aria-label="Search"
-          />
+          <input id="search-input" type="search" placeholder="Search..." aria-label="Search" />
         </label>
-        <button class="icon-btn" aria-label="Notifications">
+        <button type="button" class="icon-btn" aria-label="Notifications">
           <i class="fa fa-bell" aria-hidden="true"></i>
         </button>
-        <button class="profile-btn" aria-label="Profile">
+        <button type="button" class="profile-btn" aria-label="Profile">
           <img
             class="avatar"
             src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s="
             alt="Profile avatar"
+            width="40"
+            height="40"
+            loading="lazy"
           />
         </button>
       </div>
@@ -66,20 +63,16 @@
             >
           </li>
           <li>
-            <a href="#doctors"
-              ><i class="fa fa-user-md"></i><span>Doctors</span></a
-            >
+            <a href="#doctors"><i class="fa fa-user-md"></i><span>Doctors</span></a>
           </li>
           <li>
-            <a href="#reports"
-              ><i class="fa fa-file-medical-alt"></i><span>Reports</span></a
-            >
+            <a href="#reports"><i class="fa fa-file-medical-alt"></i><span>Reports</span></a>
           </li>
         </ul>
         <div class="sidebar-bottom">
-          <a class="signout" href="#signout" role="button" aria-label="Sign out"
-            ><i class="fa fa-right-from-bracket"></i><span>Sign out</span></a
-          >
+          <button type="button" class="signout" aria-label="Sign out">
+            <i class="fa fa-right-from-bracket" aria-hidden="true"></i><span>Sign out</span>
+          </button>
         </div>
       </aside>
 
@@ -104,22 +97,14 @@
                 </div>
               </div>
               <div class="welcome-ctas">
-                <a class="btn primary large" href="#appointments"
-                  >Book Appointment</a
-                >
-                <a class="btn ghost large history-btn" href="#history"
-                  >Medical History</a
-                >
+                <a class="btn primary large" href="#appointments">Book Appointment</a>
+                <a class="btn ghost large history-btn" href="#history">Medical History</a>
               </div>
             </div>
             <div class="welcome-right">
               <!-- visual summary: reuse adherence SVG for emphasis -->
               <div class="adherence-large">
-                <svg
-                  viewBox="0 0 36 36"
-                  class="circular-chart large"
-                  aria-hidden="true"
-                >
+                <svg viewBox="0 0 36 36" class="circular-chart large" aria-hidden="true">
                   <path
                     class="circle-bg"
                     d="M18 2.0845
@@ -141,8 +126,8 @@
           </div>
         </section>
 
-        <section class="panel top-row">
-          <div class="card upcoming">
+        <section class="panel top-row" id="appointments">
+          <div class="card upcoming" id="doctors">
             <header class="card-head">
               <h3>Upcoming Appointments</h3>
               <a class="link-muted" href="#appointments">View all</a>
@@ -167,7 +152,7 @@
             </div>
           </div>
 
-          <div class="card prescriptions">
+          <div class="card prescriptions" id="prescriptions">
             <header class="card-head">
               <h3>Prescriptions</h3>
               <a class="link-muted" href="#prescriptions">View all</a>
@@ -186,15 +171,11 @@
             </div>
           </div>
 
-          <div class="card adherence">
+          <div class="card adherence" id="reports">
             <header class="card-head"><h3>Medication Adherence</h3></header>
             <div class="card-body center">
               <!-- accessible circular progress (SVG) -->
-              <svg
-                viewBox="0 0 36 36"
-                class="circular-chart"
-                aria-hidden="true"
-              >
+              <svg viewBox="0 0 36 36" class="circular-chart" aria-hidden="true">
                 <path
                   class="circle-bg"
                   d="M18 2.0845
@@ -215,7 +196,7 @@
           </div>
         </section>
 
-        <section class="panel history">
+        <section class="panel history" id="history">
           <h3>Medical History</h3>
           <ul class="history-list">
             <li>
